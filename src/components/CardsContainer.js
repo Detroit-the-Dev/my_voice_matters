@@ -1,22 +1,24 @@
-// import PropTypes from "prop-types";
-// import "./CardsContainer.css";
+import PropTypes from "prop-types";
+import "./CardsContainer.css";
+import Card from "./Card.js";
+import NewCard from "./NewCard.js";
 
-// const CardContainer = (props) => {
-//   const boards = props.boardData;
-//   const CardList = boards.map((board) => {
-//     // console.log(board.title);
+const CardsContainer = (props) => {
+  console.log(props);
+  const cards = props.cardData;
+  const CardList = cards.map((card) => {
+    return <Card cardInfo={card} />;
+  });
 
-//     return <Card boardTitle={board.title} />;
-//   });
+  return (
+    <div>
+      {/* Board Title */}
+      <NewCard />
+      <section>{CardList}</section>
+    </div>
+  );
+};
 
-//   return (
-//     // <section>
-//     //   <p>{message}</p>
-//     //   <p>{likescount}</p>
-//     // </section>
-//   );
-// };
+// CardsContainer.propTypes = {};
 
-// CardContainer.propTypes = {};
-
-// export default CardContainer;
+export default CardsContainer;
