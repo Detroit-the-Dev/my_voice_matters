@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./BoardTitle.css";
 
 const BoardTitle = (props) => {
