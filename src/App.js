@@ -4,22 +4,24 @@ import BoardsList from "./components/BoardsList";
 import boardsData from "./data/boards.json";
 import cardsData from "./data/cards.json";
 import CardsContainer from "./components/CardsContainer";
+import React, { Fragment } from "react";
 
 function App() {
   return (
-    <div>
-      <header>
+    <div className="container">
+      <header className="app-header">
         <h1>Reactionary</h1>
       </header>
-      <section>
+
+      <div className="new-board-container">
         <NewBoard />
-      </section>
-      <section>
+      </div>
+      <div className="boards-list-container">
         <BoardsList boardData={boardsData} />
-      </section>
-      <section>
+      </div>
+      <div className="cards-container">
         <CardsContainer cardData={cardsData} />
-      </section>
+      </div>
     </div>
   );
 }

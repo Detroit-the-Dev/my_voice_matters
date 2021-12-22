@@ -12,7 +12,7 @@ const BoardsList = (props) => {
   });
 
   return (
-    <div>
+    <div className="boards-list-style">
       <section>{BoardList}</section>
     </div>
   );
