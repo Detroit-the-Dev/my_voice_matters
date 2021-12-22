@@ -2,8 +2,8 @@ import PropTypes from "prop-types";
 import "./Card.css";
 
 const Card = (props) => {
-  console.log(props);
-  const { message, likes_count } = props.cardInfo;
+  // console.log(props);
+  const { message, likes_count } = props.cardData;
 
   return (
     <section>

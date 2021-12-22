@@ -4,10 +4,10 @@ import Card from "./Card.js";
 import NewCard from "./NewCard.js";
 
 const CardsContainer = (props) => {
-  console.log(props);
-  const cards = props.cardData;
+  // console.log(props);
+  const cards = props.cardsData;
   const CardList = cards.map((card) => {
-    return <Card cardInfo={card} />;
+    return <Card cardData={card} />;
   });
 
   return (
