@@ -3,16 +3,22 @@ import "./BoardsList.css";
 import BoardTitle from "./BoardTitle.js";
 
 const BoardsList = (props) => {
-  const boards = props.boardData;
+  const boards = props.boardsData;
 
   const BoardList = boards.map((board) => {
     // console.log(board);
 
-    return <BoardTitle boardInfo={board} />;
+    return (
+      <BoardTitle
+        boardData={board}
+        updateCurrentBoard={props.updateCurrentBoard}
+      />
+    );
   });
 
   return (
     <div>
+      <h2>Boards</h2>
       <section>{BoardList}</section>
     </div>
   );
