@@ -9,7 +9,7 @@ const BoardsList = (props) => {
     // console.log(board);
 
     return (
-      <BoardTitle
+      <BoardTitle 
         boardData={board}
         updateCurrentBoard={props.updateCurrentBoard}
       />

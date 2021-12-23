@@ -36,14 +36,19 @@ const NewBoard = (props) => {
   return (
     <form onSubmit={submitNewBoard}>
       <label>Title</label>
+      <div></div>
       <input type="text" value={formFields.title} onChange={onTitleChange} />
+      <div></div>
       <label>Owner's Name</label>
+      <div></div>
       <input
         type="text"
         value={formFields.ownerName}
         onChange={onOwnerNameChange}
       />
-      <input type="submit" value="Submit" />
+      <div></div>
+      {/* <input type="submit" value="Submit" /> */}
+      <input class="btn btn-primary" type="submit" value="Submit"></input>
     </form>
   );
 };
