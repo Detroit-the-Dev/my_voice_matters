@@ -33,22 +33,26 @@ const NewBoard = (props) => {
     });
   };
 
+  const isEnabled =
+    formFields.title.length > 0 && formFields.ownerName.length > 0;
+
   return (
     <form onSubmit={submitNewBoard}>
       <label>Title</label>
-      <div></div>
+      <br />
       <input type="text" value={formFields.title} onChange={onTitleChange} />
-      <div></div>
       <label>Owner's Name</label>
-      <div></div>
       <input
         type="text"
         value={formFields.ownerName}
         onChange={onOwnerNameChange}
       />
-      <div></div>
-      {/* <input type="submit" value="Submit" /> */}
-      <input class="btn btn-primary" type="submit" value="Submit"></input>
+      <input
+        class="btn btn-primary"
+        type="submit"
+        value="Submit"
+        disabled={!isEnabled}
+      />
     </form>
   );
 };
