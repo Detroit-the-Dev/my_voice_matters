@@ -31,4 +31,6 @@
 
 .error-message {
     color: red;
+    padding-top: 10px;
+    font-size: small;
 }
