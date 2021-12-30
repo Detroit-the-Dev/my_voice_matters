@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-width: 600px;
+    min-width: 700px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -16,6 +16,7 @@
 }
 
 .create-new-card-label {
+    font-size: larger;
     padding-top: 15px;
 }
 

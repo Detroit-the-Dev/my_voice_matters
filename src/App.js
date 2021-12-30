@@ -54,7 +54,12 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        minWidth: "99%",
+      }}
+    >
       <header className="app-header">
         <h1>Reactionary</h1>
       </header>
