@@ -23,5 +23,6 @@
 
 .board-owner {
     display: flex;
+    font-size: medium;
     justify-content: center;
 }
