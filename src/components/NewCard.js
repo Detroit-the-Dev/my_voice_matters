@@ -26,7 +26,7 @@ const NewCard = (props) => {
           type="text"
           value={formMessage}
           onChange={onMessageChange}
-          size="30"
+          size="25"
           className={formMessage.length > 40 ? "red-outline" : ""}
         />
         <p className="error-message">
@@ -35,12 +35,14 @@ const NewCard = (props) => {
             : ""}
         </p>
       </div>
-      <input
-        className="btn btn-primary"
-        type="submit"
-        value="Submit"
-        disabled={!newCardIsEnabled}
-      />
+      <div>
+        <input
+          className="btn btn-primary"
+          type="submit"
+          value="Submit"
+          disabled={!newCardIsEnabled}
+        />
+      </div>
     </form>
   );
 };
