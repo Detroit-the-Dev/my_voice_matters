@@ -3,15 +3,27 @@ body {
   margin: 0;
 }
 
+header {
+  height: 150px;
+  color: white;
+  border-width: thick;
+  background-color:black;
+  border-color: white;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+}
+
 .container {
   display: grid;
   height: 100%;
   min-height: 100vh;
   grid-gap: 5px;
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   grid-template-columns: repeat(15, 1fr);
   grid-template-areas:
-    "h h h h h h h h h h h h h h h"
+    /* "h h h h h h h h h h h h h h h" */
     "a a a a c c c c c c c c c c c"
     "a a a a c c c c c c c c c c c"
     "a a a a c c c c c c c c c c c"
@@ -24,7 +36,7 @@ body {
   padding-right: 2px;
 }
 
-.app-header {
+/* .app-header {
   grid-area: h;
   color: white;
   background-color:#3325ef;
@@ -32,7 +44,7 @@ body {
   justify-content: center;
   margin-top: 5px;
   font-family: "Lato", sans-serif;
-}
+} */
 
 .new-board-container {
   background-color: #e1ef25;

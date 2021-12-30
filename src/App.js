@@ -54,33 +54,37 @@ function App() {
   };
 
   return (
-    <div
-      className="container"
-      style={{
-        minWidth: "99%",
-      }}
-    >
-      <header className="app-header">
+    <div>
+      <header>
         <h1>Reactionary</h1>
       </header>
-      <section className="new-board-container">
-        <button onClick={changeBoardFormVisibility}>
-          Create New Board {boardFormVisible ? "\u25B2" : "\u25BC"}
-        </button>
-        {boardFormVisible ? <NewBoard createNewBoard={createNewBoard} /> : null}
-      </section>
-      <section className="boards-list-container">
-        <BoardsList
-          boardsData={boardsData}
-          currentBoard={currentBoard}
-          updateCurrentBoard={updateCurrentBoard}
-        />
-      </section>
-      <section className="cards-container">
-        {currentBoard.id ? (
-          <CardsContainer currentBoard={currentBoard} />
-        ) : null}
-      </section>
+      <div
+        className="container"
+        style={{
+          minWidth: "99%",
+        }}
+      >
+        <section className="new-board-container">
+          <button onClick={changeBoardFormVisibility}>
+            Create New Board {boardFormVisible ? "\u25B2" : "\u25BC"}
+          </button>
+          {boardFormVisible ? (
+            <NewBoard createNewBoard={createNewBoard} />
+          ) : null}
+        </section>
+        <section className="boards-list-container">
+          <BoardsList
+            boardsData={boardsData}
+            currentBoard={currentBoard}
+            updateCurrentBoard={updateCurrentBoard}
+          />
+        </section>
+        <section className="cards-container">
+          {currentBoard.id ? (
+            <CardsContainer currentBoard={currentBoard} />
+          ) : null}
+        </section>
+      </div>
     </div>
   );
 }

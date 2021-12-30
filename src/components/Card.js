@@ -6,23 +6,28 @@ const Card = (props) => {
   const { message, likes_count } = props.cardData;
 
   return (
-    <section>
-      <div>
-        <p>{message}</p>
+    <section className="individual-card-container ">
+      <p className="card-message">{message}</p>
+
+      <div className="heart-button">
+        <button
+          className="btn btn-sm btn-light"
+          onClick={() => props.cardPlusOne(props.cardData)}
+        >
+          ❤️
+        </button>
       </div>
-      <button
-        className="btn btn-sm btn-light"
-        onClick={() => props.cardPlusOne(props.cardData)}
-      >
-        ❤️
-      </button>
-      <p>{likes_count}</p>
-      <button
-        className="btn btn-sm btn-light"
-        onClick={() => props.deleteCard(props.cardData)}
-      >
-        Delete
-      </button>
+
+      <p className="likes-count">{likes_count}</p>
+
+      <div className="delete-button">
+        <button
+          className="btn btn-sm btn-light"
+          onClick={() => props.deleteCard(props.cardData)}
+        >
+          Delete
+        </button>
+      </div>
     </section>
   );
 };
