@@ -1,0 +1,27 @@
+.board-header {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    min-width: 250px;
+}
+
+.new-card-container {
+    background-color: white;
+    border-radius: 10px; 
+}
+
+.board-title {
+    display: flex;
+    justify-content: center;
+}
+
+.board-owner {
+    display: flex;
+    justify-content: center;
+}

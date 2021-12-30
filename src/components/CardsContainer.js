@@ -80,10 +80,14 @@ const CardsContainer = (props) => {
   };
 
   return (
-    <div>
-      <h2>{props.currentBoard.title}</h2>
-      <h3>{props.currentBoard.owner_name}</h3>
-      <NewCard createNewCard={createNewCard} />
+    <div className="card-container">
+      <div className="board-header">
+        <h2 className="board-title">{props.currentBoard.title}</h2>
+        <h3 className="board-owner">{props.currentBoard.owner_name}</h3>
+      </div>
+      <div className="new-card-container">
+        <NewCard createNewCard={createNewCard} />
+      </div>
       <section>{CardList}</section>
     </div>
   );

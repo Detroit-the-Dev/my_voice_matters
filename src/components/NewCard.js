@@ -18,20 +18,29 @@ const NewCard = (props) => {
   const newCardIsEnabled = formMessage.length > 0 && formMessage.length <= 40;
 
   return (
-    <form onSubmit={submitNewCard}>
-      <h3>Create New Card</h3>
-      <label>Message</label>
+    <form className="create-card-container" onSubmit={submitNewCard}>
+      <p className="create-new-card-label">Create New Card</p>
+      <div className="message-label-and-box">
+        <label className="message">Message</label>
+        <input
+          type="text"
+          value={formMessage}
+          onChange={onMessageChange}
+          size="30"
+          className={formMessage.length > 40 ? "red-outline" : ""}
+        />
+        <p className="error-message">
+          {formMessage.length > 40
+            ? "Message must be 40 characters or less"
+            : ""}
+        </p>
+      </div>
       <input
-        type="text"
-        value={formMessage}
-        onChange={onMessageChange}
-        size="55"
-        className={formMessage.length > 40 ? "red-outline" : ""}
+        className="btn btn-primary"
+        type="submit"
+        value="Submit"
+        disabled={!newCardIsEnabled}
       />
-      <p className="error-message">
-        {formMessage.length > 40 ? "Message must be 40 characters or less" : ""}
-      </p>
-      <input type="submit" value="Submit" disabled={!newCardIsEnabled} />
     </form>
   );
 };

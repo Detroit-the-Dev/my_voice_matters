@@ -13,13 +13,14 @@
     "b b b b c c c c c c c c c c c"
     "b b b b c c c c c c c c c c c"
     "b b b b c c c c c c c c c c c";
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .app-header {
   grid-area: h;
-  background-color: blue;
+  color: white;
+  background-color:#3325ef;
   display: flex;
   justify-content: center;
   margin-top: 5px;
@@ -27,7 +28,7 @@
 }
 
 .new-board-container {
-  background-color: green;
+  background-color: #e1ef25;
   grid-area: a;
   font-family: "Lato", sans-serif;
   font-weight: bolder;
@@ -35,13 +36,16 @@
 }
 
 .boards-list-container {
-  background-color: red;
+  background-color: #ef257c;
+  color: white;
   grid-area: b;
   padding: 15px;
   font-family: "Lato", sans-serif;
 }
 
 .cards-container {
-  background-color: purple;
+  background-color: #25ef98;
   grid-area: c;
+  padding: 15px;
+  font-family: "Lato", sans-serif;
 }

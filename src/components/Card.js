@@ -7,10 +7,22 @@ const Card = (props) => {
 
   return (
     <section>
-      <p>{message}</p>
-      <button onClick={() => props.cardPlusOne(props.cardData)}>❤️</button>
+      <div>
+        <p>{message}</p>
+      </div>
+      <button
+        className="btn btn-sm btn-light"
+        onClick={() => props.cardPlusOne(props.cardData)}
+      >
+        ❤️
+      </button>
       <p>{likes_count}</p>
-      <button onClick={() => props.deleteCard(props.cardData)}>Delete</button>
+      <button
+        className="btn btn-sm btn-light"
+        onClick={() => props.deleteCard(props.cardData)}
+      >
+        Delete
+      </button>
     </section>
   );
 };
