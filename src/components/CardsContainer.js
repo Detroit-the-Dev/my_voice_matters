@@ -21,7 +21,7 @@ const CardsContainer = (props) => {
         console.log(error);
         // Improve error handling
       });
-  });
+  }, [props.currentBoard]);
 
   const deleteCard = (deletedCard) => {
     axios
