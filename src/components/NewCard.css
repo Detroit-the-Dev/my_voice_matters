@@ -1,0 +1,7 @@
+.red-outline {
+    border: red solid 4px;
+}
+
+.error-message {
+    color: red;
+}

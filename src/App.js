@@ -2,7 +2,7 @@ import "./App.css";
 import NewBoard from "./components/NewBoard";
 import BoardsList from "./components/BoardsList";
 // import boardsData from "./data/boards.json";
-import cardsData from "./data/cards.json";
+// import cardsData from "./data/cards.json";
 import CardsContainer from "./components/CardsContainer";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -35,7 +35,7 @@ function App() {
       .then((response) => {
         console.log("Response:", response.data);
         const boards = [...boardsData];
-        boards.push(response.data.board);
+        boards.push(response.data);
         setBoardsData(boards);
       })
       .catch((error) => {
@@ -73,7 +73,7 @@ function App() {
       </section>
       <section className="cards-container">
         {currentBoard.id ? (
-          <CardsContainer cardsData={cardsData} currentBoard={currentBoard} />
+          <CardsContainer currentBoard={currentBoard} />
         ) : null}
       </section>
     </div>

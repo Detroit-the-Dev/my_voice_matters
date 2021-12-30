@@ -1,5 +1,6 @@
 import "./NewBoard.css";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const NewBoard = (props) => {
   const [formFields, setFormFields] = useState({
@@ -33,7 +34,7 @@ const NewBoard = (props) => {
     });
   };
 
-  const isEnabled =
+  const newBoardIsEnabled =
     formFields.title.length > 0 && formFields.ownerName.length > 0;
 
   return (
@@ -48,13 +49,15 @@ const NewBoard = (props) => {
         onChange={onOwnerNameChange}
       />
       <input
-        class="btn btn-primary"
+        className="btn btn-primary"
         type="submit"
         value="Submit"
-        disabled={!isEnabled}
+        disabled={!newBoardIsEnabled}
       />
     </form>
   );
 };
+
+// NewBoard.propTypes = {};
 
 export default NewBoard;
