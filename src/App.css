@@ -5,6 +5,7 @@ body {
 
 header {
   height: 150px;
+  min-width: 1065px; 
   color: white;
   border-width: thick;
   background-color:black;
@@ -36,18 +37,9 @@ header {
   padding-right: 2px;
 }
 
-/* .app-header {
-  grid-area: h;
-  color: white;
-  background-color:#3325ef;
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-  font-family: "Lato", sans-serif;
-} */
-
 .new-board-container {
   background-color: #e1ef25;
+  min-width: 250px;
   grid-area: a;
   font-family: "Lato", sans-serif;
   font-weight: bolder;
@@ -56,6 +48,7 @@ header {
 
 .boards-list-container {
   background-color: #ef257c;
+  min-width: 250px;
   color: white;
   grid-area: b;
   padding: 15px;
@@ -64,6 +57,7 @@ header {
 
 .cards-container {
   background-color: #25ef98;
+  min-width: 800px;
   grid-area: c;
   padding: 15px;
   font-family: "Lato", sans-serif;
