@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import "./Card.css";
 
 const Card = (props) => {
-  console.log("Card props:", props);
+  // console.log("Card props:", props);
   const { message, likes_count } = props.cardData;
 
   return (
@@ -32,6 +32,15 @@ const Card = (props) => {
   );
 };
 
-// // Card.propTypes = {};
+Card.propTypes = {
+  cardPlusOne: PropTypes.func,
+  deleteCard: PropTypes.func,
+  cardData: PropTypes.shape({
+    board_id: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    likes_count: PropTypes.number.isRequired,
+    message: PropTypes.string.isRequired,
+  }),
+};
 
 export default Card;

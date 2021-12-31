@@ -6,8 +6,6 @@ const BoardsList = (props) => {
   const boards = props.boardsData;
 
   const BoardList = boards.map((board) => {
-    // console.log(board);
-
     return (
       <BoardTitle
         key={board.id}
@@ -25,6 +23,15 @@ const BoardsList = (props) => {
   );
 };
 
-// BoardList.propTypes = {};
+BoardsList.propTypes = {
+  updateCurrentBoard: PropTypes.func,
+  boardsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      owner_name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default BoardsList;

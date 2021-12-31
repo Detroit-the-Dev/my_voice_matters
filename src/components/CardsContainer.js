@@ -93,6 +93,12 @@ const CardsContainer = (props) => {
   );
 };
 
-// CardsContainer.propTypes = {};
+CardsContainer.propTypes = {
+  currentBoard: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    owner_name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};
 
 export default CardsContainer;

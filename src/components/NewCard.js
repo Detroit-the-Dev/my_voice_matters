@@ -47,6 +47,8 @@ const NewCard = (props) => {
   );
 };
 
-// NewCard.propTypes = {};
+NewCard.propTypes = {
+  createNewCard: PropTypes.func,
+};
 
 export default NewCard;

@@ -18,6 +18,13 @@ const BoardTitle = (props) => {
   );
 };
 
-// BoardTitle.propTypes = {};
+BoardTitle.propTypes = {
+  updateCurrentBoard: PropTypes.func,
+  boardData: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    owner_name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};
 
 export default BoardTitle;

@@ -42,12 +42,16 @@ const NewBoard = (props) => {
       <label>Title</label>
       <br />
       <input type="text" value={formFields.title} onChange={onTitleChange} />
+      <br />
       <label>Owner's Name</label>
+      <br />
       <input
         type="text"
         value={formFields.ownerName}
         onChange={onOwnerNameChange}
       />
+      <br />
+      <br />
       <input
         className="btn btn-primary"
         type="submit"
@@ -58,6 +62,8 @@ const NewBoard = (props) => {
   );
 };
 
-// NewBoard.propTypes = {};
+NewBoard.propTypes = {
+  createNewBoard: PropTypes.func,
+};
 
 export default NewBoard;
