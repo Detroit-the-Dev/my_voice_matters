@@ -21,7 +21,7 @@ const CardsContainer = (props) => {
         console.log(error);
         // Improve error handling
       });
-  }, [props.currentBoard]);
+  }, [props.currentBoard, cardsData]);
 
   const deleteCard = (deletedCard) => {
     axios
@@ -92,6 +92,15 @@ const CardsContainer = (props) => {
       </div>
       <div className="new-card-submission-container">
         <NewCard createNewCard={createNewCard} />
+      </div>
+      <div>
+        {cardsData.length > 0 ? (
+          <select>
+            <option value="id">ID</option>
+            <option value="message">Message</option>
+            <option value="likes">Likes</option>
+          </select>
+        ) : null}
       </div>
       <section className="cards-container">{CardList}</section>
     </div>

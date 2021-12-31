@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/boards`, {})
+      .get(`${process.env.REACT_APP_BACKEND_URL}/boards`)
       .then((response) => {
         console.log(response);
         setBoardsData(response.data);
