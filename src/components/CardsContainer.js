@@ -57,7 +57,12 @@ const CardsContainer = (props) => {
 
   const CardList = cardsData.map((card) => {
     return (
-      <Card cardData={card} deleteCard={deleteCard} cardPlusOne={cardPlusOne} />
+      <Card
+        key={card.id}
+        cardData={card}
+        deleteCard={deleteCard}
+        cardPlusOne={cardPlusOne}
+      />
     );
   });
 
