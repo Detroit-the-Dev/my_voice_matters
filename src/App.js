@@ -1,8 +1,6 @@
 import "./App.css";
 import NewBoard from "./components/NewBoard";
 import BoardsList from "./components/BoardsList";
-// import boardsData from "./data/boards.json";
-// import cardsData from "./data/cards.json";
 import CardsContainer from "./components/CardsContainer";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -58,12 +56,7 @@ function App() {
       <header>
         <h1>Reactionary</h1>
       </header>
-      <div
-        className="container"
-        style={{
-          minWidth: "99%",
-        }}
-      >
+      <div className="container">
         <section className="new-board-container">
           <button onClick={changeBoardFormVisibility}>
             Create New Board {boardFormVisible ? "\u25B2" : "\u25BC"}
