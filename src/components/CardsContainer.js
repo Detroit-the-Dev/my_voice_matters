@@ -14,20 +14,20 @@ const CardsContainer = (props) => {
         `${process.env.REACT_APP_BACKEND_URL}/boards/${props.currentBoard.id}/cards`
       )
       .then((response) => {
-        console.log(response);
+        // console.log("axios response", response);
         setCardsData(response.data);
       })
       .catch((error) => {
         console.log(error);
         // Improve error handling
       });
-  }, [props.currentBoard, cardsData]);
+  }, [props.currentBoard]);
 
   const deleteCard = (deletedCard) => {
     axios
       .delete(`${process.env.REACT_APP_BACKEND_URL}/cards/${deletedCard.id}`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         const updatedCardsData = cardsData.filter(
           (card) => card.id !== deletedCard.id
         );
@@ -45,7 +45,7 @@ const CardsContainer = (props) => {
         `${process.env.REACT_APP_BACKEND_URL}/cards/${likedCard.id}/add_like`
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         const updatedCardsData = cardsData.map((card) => {
           return card.id === likedCard.id
             ? { ...card, likes_count: card.likes_count + 1 }
@@ -73,9 +73,9 @@ const CardsContainer = (props) => {
         newCardMessage
       )
       .then((response) => {
-        console.log("Response:", response.data);
+        // console.log("Response:", response);
         const cards = [...cardsData];
-        cards.push(response);
+        cards.push(response.data);
         setCardsData(cards);
       })
       .catch((error) => {
@@ -92,15 +92,6 @@ const CardsContainer = (props) => {
       </div>
       <div className="new-card-submission-container">
         <NewCard createNewCard={createNewCard} />
-      </div>
-      <div>
-        {cardsData.length > 0 ? (
-          <select>
-            <option value="id">ID</option>
-            <option value="message">Message</option>
-            <option value="likes">Likes</option>
-          </select>
-        ) : null}
       </div>
       <section className="cards-container">{CardList}</section>
     </div>
