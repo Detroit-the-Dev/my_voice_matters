@@ -46,3 +46,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.sort {
+    text-align: right;
+}

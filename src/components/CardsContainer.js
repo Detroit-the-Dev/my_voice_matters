@@ -93,6 +93,17 @@ const CardsContainer = (props) => {
       <div className="new-card-submission-container">
         <NewCard createNewCard={createNewCard} />
       </div>
+      <br />
+      {cardsData.length > 0 ? (
+        <div className="sort">
+          <span>Sort by </span>
+          <select>
+            <option value="id">ID</option>
+            <option value="message">Message</option>
+            <option value="likes">Likes</option>
+          </select>
+        </div>
+      ) : null}
       <section className="cards-container">{CardList}</section>
     </div>
   );
