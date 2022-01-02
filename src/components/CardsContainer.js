@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 const CardsContainer = (props) => {
   const [cardsData, setCardsData] = useState([]);
+  const [sortType, setSortType] = useState("id");
 
   useEffect(() => {
     axios
@@ -15,7 +16,9 @@ const CardsContainer = (props) => {
       )
       .then((response) => {
         // console.log("axios response", response);
+        setSortType("id");
         setCardsData(response.data);
+        console.log(cardsData);
       })
       .catch((error) => {
         console.log(error);
@@ -84,6 +87,37 @@ const CardsContainer = (props) => {
       });
   };
 
+  useEffect(() => {
+    const sortArray = (type) => {
+      let sorted = [];
+      if (type === "message az") {
+        sorted = [...cardsData].sort((a, b) =>
+          a.message.localeCompare(b.message)
+        );
+      } else if (type === "message za") {
+        sorted = [...cardsData].sort((a, b) =>
+          b.message.localeCompare(a.message)
+        );
+      } else if (type === "id lh") {
+        sorted = [...cardsData].sort((a, b) => a["id"] - b["id"]);
+      } else if (type === "id hl") {
+        sorted = [...cardsData].sort((a, b) => b["id"] - a["id"]);
+      } else if (type === "likes lh") {
+        sorted = [...cardsData].sort(
+          (a, b) => a["likes_count"] - b["likes_count"]
+        );
+      } else if (type === "likes hl") {
+        sorted = [...cardsData].sort(
+          (a, b) => b["likes_count"] - a["likes_count"]
+        );
+      }
+      setCardsData(sorted);
+      console.log("sorted:", sorted);
+    };
+
+    sortArray(sortType);
+  }, [sortType]);
+
   return (
     <div className="one-board-wrapper">
       <div className="board-header">
@@ -97,10 +131,16 @@ const CardsContainer = (props) => {
       {cardsData.length > 0 ? (
         <div className="sort">
           <span>Sort by </span>
-          <select>
-            <option value="id">ID</option>
-            <option value="message">Message</option>
-            <option value="likes">Likes</option>
+          <select
+            onChange={(event) => setSortType(event.target.value)}
+            value={sortType}
+          >
+            <option value="id lh">ID low to high</option>
+            <option value="id hl">ID high to low</option>
+            <option value="message az">Message a-z</option>
+            <option value="message za">Message z-a</option>
+            <option value="likes lh">Likes low to high</option>
+            <option value="likes hl">Likes high to low</option>
           </select>
         </div>
       ) : null}
