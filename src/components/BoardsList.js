@@ -16,9 +16,9 @@ const BoardsList = (props) => {
   });
 
   return (
-    <div className='boards-list-style'>
-      <h2>Boards</h2>
-      <section>{BoardList}</section>
+    <div className="boards-list-container">
+      <h2 className="boards-header">Boards</h2>
+      <section className="board-list">{BoardList}</section>
     </div>
   );
 };

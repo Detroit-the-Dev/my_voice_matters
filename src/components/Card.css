@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   font-family: sans-serif;
+  font-weight: bold;
   font-size: large;
 }
 
@@ -38,12 +39,8 @@
 
 .heart-button {
   grid-area: q;
-  /* display: flex;
-    align-self: flex-end; */
 }
 
 .delete-button {
   grid-area: d;
-  /* display: flex;
-    align-self: flex-end; */
 }

@@ -53,12 +53,16 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1 className='header-style'>Reactionary</h1>
+      <header className="header-container">
+        <h1 className="header-style">Reactionary</h1>
       </header>
+
       <div className="container">
         <section className="new-board-container">
-          <button className="btn btn-primary" onClick={changeBoardFormVisibility}>
+          <button
+            className="btn btn-primary"
+            onClick={changeBoardFormVisibility}
+          >
             Create New Board {boardFormVisible ? "\u25B2" : "\u25BC"}
           </button>
           {boardFormVisible ? (

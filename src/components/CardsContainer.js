@@ -144,6 +144,7 @@ const CardsContainer = (props) => {
           </select>
         </div>
       ) : null}
+
       <section className="cards-container">{CardList}</section>
     </div>
   );

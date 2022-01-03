@@ -38,26 +38,29 @@ const NewBoard = (props) => {
     formFields.title.length > 0 && formFields.ownerName.length > 0;
 
   return (
-    <form className='new-board-style' onSubmit={submitNewBoard}>
-      <label>Title</label>
-      <br />
-      <input type="text" value={formFields.title} onChange={onTitleChange} />
-      <br />
-      <label>Owner's Name</label>
-      <br />
+    <form className="new-board-style" onSubmit={submitNewBoard}>
+      <label className="title-label">Title</label>
       <input
+        className="title-box"
+        stype="text"
+        value={formFields.title}
+        onChange={onTitleChange}
+      />
+      <label className="owner-label">Owner's Name</label>
+      <input
+        className="owner-box"
         type="text"
         value={formFields.ownerName}
         onChange={onOwnerNameChange}
       />
-      <br />
-      <br />
-      <input
-        className="btn btn-primary"
-        type="submit"
-        value="Submit"
-        disabled={!newBoardIsEnabled}
-      />
+      <div className="submit-button">
+        <input
+          className="btn btn-primary"
+          type="submit"
+          value="Submit"
+          disabled={!newBoardIsEnabled}
+        />
+      </div>
     </form>
   );
 };
