@@ -5,15 +5,19 @@ body {
 
 header {
   height: 150px;
-  min-width: 1065px; 
+  min-width: 1065px;
   color: white;
   border-width: thick;
-  background-color:black;
+  background-color: #3a5eb9;
   border-color: white;
   border-style: solid;
   display: flex;
   justify-content: center;
   font-family: "Lato", sans-serif;
+}
+
+.header-style {
+  font-size: 75px;
 }
 
 .container {

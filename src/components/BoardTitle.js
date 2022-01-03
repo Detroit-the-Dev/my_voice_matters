@@ -12,8 +12,8 @@ const BoardTitle = (props) => {
   };
 
   return (
-    <section>
-      <button onClick={selectCurrentBoard}>{props.boardData.title}</button>
+    <section className='board-style'>
+      <button  className="btn btn-primary" onClick={selectCurrentBoard}>{props.boardData.title}</button>
     </section>
   );
 };

@@ -38,7 +38,7 @@ const NewBoard = (props) => {
     formFields.title.length > 0 && formFields.ownerName.length > 0;
 
   return (
-    <form onSubmit={submitNewBoard}>
+    <form className='new-board-style' onSubmit={submitNewBoard}>
       <label>Title</label>
       <br />
       <input type="text" value={formFields.title} onChange={onTitleChange} />

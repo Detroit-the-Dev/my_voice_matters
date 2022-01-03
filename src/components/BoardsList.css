@@ -1,3 +1,6 @@
-/* .boards-list-style {
 
-} */
+.boards-list-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
