@@ -27,6 +27,7 @@ header {
 .container {
   display: grid;
   min-width: 99%;
+  min-height: 100vh;
   grid-gap: 5px;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: minmax(1px, auto) 1fr;
