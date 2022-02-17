@@ -1,89 +1,121 @@
 import "./App.css";
-import NewBoard from "./components/NewBoard";
-import BoardsList from "./components/BoardsList";
-import CardsContainer from "./components/CardsContainer";
+import ButtonList from "./components/ButtonList";
 import axios from "axios";
-import { useState, useEffect } from "react";
 
 function App() {
-  const [boardsData, setBoardsData] = useState([]);
-  const [currentBoard, setCurrentBoard] = useState({
-    id: null,
-    owner_name: "",
-    title: "",
-  });
-  const [boardFormVisible, setBoardFormVisible] = useState(true);
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/boards`)
-      .then((response) => {
-        console.log(response);
-        setBoardsData(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        // Improve error handling
-      });
-  }, []);
+const buttonData = [
+  {
+    name: 'stop',
+    image_url: 'images/STOP.png'
+  },
+  {
+    name: 'eat',
+    image_url: 'images/CREEPY EATER.png'
+  },
+  {
+    name: 'more',
+    image_url: 'images/MORE.png'
+  },
+  {
+    name: 'drink',
+    image_url: 'images/DRINK.png'
+  },
+  {
+    name: 'help',
+    image_url: 'images/HELP.png'
+  },
+  {
+    name: 'all done',
+    image_url: 'images/ALL DONE.png'
+  },
+  {
+    name: 'go',
+    image_url: 'images/GO.png'
+  },
+  {
+    name: 'play',
+    image_url: 'images/PLAY.png'
+  },
+  {
+    name: 'open',
+    image_url: 'images/OPEN.png'
+  },
+  {
+    name: 'close',
+    image_url: 'images/CLOSE.png'
+  },
+  {
+    name: 'in',
+    image_url: 'images/IN.png'
+  },
+  {
+    name: 'out',
+    image_url: 'images/OUT.png'
+  },
+  {
+    name: 'yes',
+    image_url: 'images/YES.png'
+  },
+  {
+    name: 'no',
+    image_url: 'images/NO.png'
+  },
+  {
+    name: 'thank you',
+    image_url: 'images/THANK YOU.png'
+  },
+  {
+    name: 'hello',
+    image_url: 'images/HELLO.png'
+  },
+  {
+    name: 'goodbye',
+    image_url: 'images/GOODBYE.png'
+  },
+  {
+    name: 'please',
+    image_url: 'images/PLEASE.png'
+  },
+  {
+    name: 'bath',
+    image_url: 'images/BATH.png'
+  },
+  {
+    name: 'bed',
+    image_url: 'images/BED.png'
+  },
+  {
+    name: 'school',
+    image_url: 'images/SCHOOL.png'
+  },
+  {
+    name: 'bus',
+    image_url: 'images/BUS.png'
+  },
+  {
+    name: 'daddy',
+    image_url: 'images/DADDY.png'
+  },
+  {
+    name: 'granny',
+    image_url: 'images/GRANNY.png'
+  },
+  {
+    name: 'i',
+    image_url: 'images/ILLIYEEN.png'
+  },
+  {
+    name: 'mama',
+    image_url: 'images/MAMA.png'
+  },
+];
 
-  const createNewBoard = (newBoard) => {
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/boards`, newBoard)
-      .then((response) => {
-        console.log("Response:", response.data);
-        const boards = [...boardsData];
-        boards.push(response.data);
-        setBoardsData(boards);
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        // Improve error handling
-      });
-  };
 
-  const changeBoardFormVisibility = () => {
-    setBoardFormVisible(!boardFormVisible);
-  };
-
-  const updateCurrentBoard = (board) => {
-    setCurrentBoard(board);
-    console.log(currentBoard);
-  };
-
-  return (
-    <div>
-      <header className="header-container">
-        <h1 className="header-style">Reactionary</h1>
-      </header>
-
-      <div className="container">
-        <section className="new-board-container">
-          <button
-            className="btn btn-primary"
-            onClick={changeBoardFormVisibility}
-          >
-            Create New Board {boardFormVisible ? "\u25B2" : "\u25BC"}
-          </button>
-          {boardFormVisible ? (
-            <NewBoard createNewBoard={createNewBoard} />
-          ) : null}
-        </section>
-        <section className="boards-list-container">
-          <BoardsList
-            boardsData={boardsData}
-            currentBoard={currentBoard}
-            updateCurrentBoard={updateCurrentBoard}
-          />
-        </section>
-        <section className="cards-container">
-          {currentBoard.id ? (
-            <CardsContainer currentBoard={currentBoard} />
-          ) : null}
-        </section>
-      </div>
-    </div>
-  );
+return (
+<section className="appContainer">
+  <ButtonList buttonData={buttonData}/>
+</section>
+ ); 
 }
-
 export default App;

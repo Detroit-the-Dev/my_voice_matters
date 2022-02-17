@@ -1,0 +1,15 @@
+.oneButton { 
+    color: #4c2c92;
+    position: relative;
+    margin: 20px;
+    border-radius: 17%;
+    padding: 10px;
+}
+img {
+    height: 175px;
+    width: 175px;
+}
+h1 {
+    font: 1rem 'Verdana';
+    font-weight: 900;
+}
