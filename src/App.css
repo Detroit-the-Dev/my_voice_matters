@@ -6,7 +6,7 @@
   box-sizing: content-box;
   border: solid 50px;
   background: #000000;
-  border-image: linear-gradient(, white, grey) 1;
+  border-image: linear-gradient(red, #4b0082, purple) 1;
   
   }
 
